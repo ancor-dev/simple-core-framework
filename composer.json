@@ -1,0 +1,18 @@
+{
+    "name": "ancor/nelly",
+    "description": "Simple admin panel for Nelly",
+    "authors": [
+        {
+            "name": "Anton Korniychuk",
+            "email": "ancor.dev@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "core\\": "core/",
+            "controllers\\": "controllers/",
+            "models\\": "models/"
+        }
+    }
+}
