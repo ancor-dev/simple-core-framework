@@ -22,7 +22,6 @@ class IndexController extends ControllerBase
         $this->setPageTitle('Home');
 
         return $this->render('index/index', [
-
         ]);
 
     } // end indexAction()
@@ -32,7 +31,7 @@ class IndexController extends ControllerBase
      */
     public function logoutAction()
     {
-        Core::$app->httpError(401, '<a href="/">Go to Site</a>', 'Logged out');
+        Core::$app->httpError(401, 'Logged out. <a href="/">Go to Site</a>', 'Logged out');
     } // end logoutAction()
 
     /**
@@ -40,13 +39,5 @@ class IndexController extends ControllerBase
      */
     public function debugAction()
     {
-//        $stmt = Core::$app->db->query("SELECT * FROM `sqlite_master` WHERE `name` = 'migration' AND `type` = 'table'");
-//        $stmt = Core::$app->db->query("SELECT * FROM `migration`");
-//        $stmt = Core::$app->db->exec("DELETE FROM migration WHERE id > 1");
-//        $stmt = Core::$app->db->exec("DROP TABLE page");
-        print_r($stmt->fetchAll(PDO::FETCH_OBJ));
-//        $m = new MigrationManager();
-//        $ms = $m->findAllMigrations();
-//        print_r($ms);
     } // end debugAction()
 }
