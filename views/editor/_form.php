@@ -10,17 +10,15 @@ use models\PageORM;
 ?>
 
 <form class="form-horizontal" method="POST">
-    <?php if ($model->isNew()) : ?>
-        <div class="form-group<?= $model->getError('name') ? ' has-error' : '' ?>">
-            <label for="inputName" class="col-sm-2 control-label">Name</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputName" name="Page[name]" placeholder="Page name" value="<?= $model->name ?>">
-            </div>
-            <?php if ($model->getError('name')) : ?>
-                <div class="help-block col-sm-10 col-sm-offset-2"><?= $model->getError('name') ?></div>
-            <?php endif ?>
+    <div class="form-group<?= $model->getError('name') ? ' has-error' : '' ?>">
+        <label for="inputName" class="col-sm-2 control-label">Name</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="inputName" name="Page[name]" placeholder="Page name" value="<?= $model->name ?>">
         </div>
-    <?php endif ?>
+        <?php if ($model->getError('name')) : ?>
+            <div class="help-block col-sm-10 col-sm-offset-2"><?= $model->getError('name') ?></div>
+        <?php endif ?>
+    </div>
     <div class="form-group<?= $model->getError('title') ? ' has-error' : '' ?>">
         <label for="inputTitle" class="col-sm-2 control-label">Title</label>
         <div class="col-sm-10">

@@ -40,7 +40,7 @@ class EditorController extends ControllerBase
         }
 
         if (Core::$app->request->isPost()) {
-            $page->load(Core::$app->request->body('Page'), ['title', 'description', 'keywords']);
+            $page->load(Core::$app->request->body('Page'), ['name', 'title', 'description', 'keywords']);
 
             if ($page->validate()) {
                 if ($page->save()) {
@@ -56,6 +56,31 @@ class EditorController extends ControllerBase
             'page' => $page,
         ]);
     } // end updateAction()
+
+    /**
+     * Copy a page
+     */
+    public function copyAction()
+    {
+        $id = Core::$app->request->query('id');
+        $page = PageORM::findOneByPk($id);
+
+        if (!$page) {
+            Core::$app->httpError(404, 'Page not found');
+        }
+
+        $copy = new PageORM();
+        $copy->load((array) $page, ['name', 'title', 'description', 'keywords']);
+        $copy->name .= '_copy';
+
+        if ($copy->save()) {
+            Core::$app->session->flash->add('success', 'Copy successfully created');
+        } else {
+            Core::$app->session->flash->add('warning', 'Could not copy the page');
+        }
+
+        Core::$app->redirect(Core::$app->url->urlToRoute('admin', 'editor', 'update', ['id' => $copy->id]));
+    } // end copyAction()
 
     /**
      * Delete the page

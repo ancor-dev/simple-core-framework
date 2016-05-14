@@ -18,25 +18,31 @@ use models\PageORM;
 <table class="table">
     <thead>
     <tr>
-        <th>#</th>
+<!--        <th>#</th>-->
         <th>Name</th>
         <th>Title</th>
+        <th>Description</th>
+        <th>Key words</th>
         <th>&nbsp;</th>
     </tr>
     </thead>
     <tbody>
     <?php foreach ($pages as $page) : ?>
         <tr>
-            <td><?= $page->id ?></td>
+<!--            <td><?= $page->id ?></td>-->
             <td><?= $page->name ?></td>
-            <td><?= $page->title ?></td>
+            <td style="min-width: 200px;"><?= $page->title ?></td>
+            <td><?= $page->description ?></td>
+            <td><?= $page->keywords ?></td>
             <td class="text-right">
                 <?php
                     $editUrl   = $this->url->urlToRoute('admin', 'editor', 'update', ['id' => $page->id]);
+                    $copyUrl   = $this->url->urlToRoute('admin', 'editor', 'copy', ['id' => $page->id]);
                     $deleteUrl = $this->url->urlToRoute('admin', 'editor', 'delete', ['id' => $page->id]);
                 ?>
-                <a href="<?= $editUrl ?>" class="btn btn-sm btn-default"><i class="glyphicon glyphicon-pencil"></i></a>
-                <a href="<?= $deleteUrl ?>" data-confirm class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-remove"></i></a>
+                <a href="<?= $editUrl ?>" class="btn btn-block btn-sm btn-default" title="Edit the page"><i class="glyphicon glyphicon-pencil"></i></a>
+                <a href="<?= $copyUrl ?>" class="btn btn-block btn-sm btn-default" title="Make copy of the page"><i class="glyphicon glyphicon-copy"></i></a>
+                <a href="<?= $deleteUrl ?>" class="btn btn-block btn-sm btn-danger" data-confirm title="Delete the page"><i class="glyphicon glyphicon-remove"></i></a>
             </td>
         </tr>
     <?php endforeach ?>
