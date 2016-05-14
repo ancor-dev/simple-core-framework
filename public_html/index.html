@@ -1,0 +1,15 @@
+<?php
+  require(__DIR__.'/../index.php');
+?>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="<?= \models\PageORM::fieldByPageName('index.html', 'description') ?>" />
+  <meta name="keywords" content="<?= \models\PageORM::fieldByPageName('index.html', 'keywords') ?>">
+  <title><?= \models\PageORM::fieldByPageName('index.html', 'title') ?></title>
+</head>
+<body>
+  This is example of the page. Look at the head tag.
+</body>
+</html>
