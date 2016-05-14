@@ -1,7 +1,7 @@
-# simple-core-framework
+# Simple core framework
 **Simple example of homemade framework.**
 
-Prehistory: *(Why i did it)*
+Prehistory: *(Why i did it)*  
 *One day I was asked to correct on some website some information.
 As it turned out the site was static.
 The task was that it would be correct title, description, keywords tags on pages.
