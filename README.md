@@ -2,13 +2,13 @@
 **Simple example of homemade framework.**
 
 Prehistory: *(Why i did it)*  
-*One day I was asked to correct on some website some information.
-As it turned out the site was static.
-The task was that it would be correct title, description, keywords tags on pages.
-Just hardcode them in html I did not want ...
-Pulls on the CMS website, too, did not want to ...
-I decided to make the admin panel and quickly make from sketch a kind of framework.
-Of course, I could use for example the laravel.
+*One day I was asked to correct on some website some information.  
+As it turned out the site was static.  
+The task was that it would be correct title, description, keywords tags on pages.  
+Just hardcode them in html I did not want ...  
+Pulls on the CMS website, too, did not want to ...  
+I decided to make the admin panel and quickly make from sketch a kind of framework.  
+Of course, I could use for example the laravel.  
 But I wanted to write it from scratch,* **just for fun.**
 
 Features:
