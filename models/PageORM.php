@@ -7,7 +7,7 @@ namespace models;
 use core\AbstractORM;
 
 /**
- * Class Page
+ * Page ORM model. This model describe one page.
  * @package models
  */
 class PageORM extends AbstractORM
@@ -109,5 +109,4 @@ class PageORM extends AbstractORM
 
         return isset($page->$field) ? $page->$field : null;
     } // end fieldByPageName()
-
 }

@@ -139,5 +139,4 @@ abstract class AbstractModel
 
         return $this->errors[$field][0];
     } // end getError()
-
 }
